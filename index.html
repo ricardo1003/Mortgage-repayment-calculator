@@ -15,28 +15,37 @@
 </head>
 <body>
   <main>
-    <section>
+    <section class="inputs">
       <h1>Mortgage Calculator</h1>
       <p>Clear All</p>
       <form>
-        <label for="">Mortgage Amount</label>
-        <input type="text">
-        <label for="">Mortgage Term</label>
-        <input type="text">
-        <label for="">Interest Rate</label>
-        <input type="text">
+        <label for="amount">Mortgage Amount</label>
+        <div class="numberInput">
+          <input type="number" id="amount">
+          <label for="amount">&euro;</label>
+        </div>
+        <label for="term">Mortgage Term</label>
+        <div class="numberInput">
+          <input type="number" id="term">
+          <label for="term">years</label>
+        </div>
+        <label for="interest">Interest Rate</label>
+        <div class="numberInput">
+          <input type="number" id="interest">
+          <label for="interest">&percnt;</label>
+        </div>
         <p>Mortgage Type</p>
-        <div>
+        <div class="Mortgage">
           <div>
-            <input type="radio" name="MortageType" id="Repayment">
+            <input type="radio" name="MortgageType" id="Repayment">
             <label for="Repayment">Repayment</label>
           </div>
           <div>
-            <input type="radio" name="MortageType" id="InterestOnly">
+            <input type="radio" name="MortgageType" id="InterestOnly">
             <label for="InterestOnly">Interest Only</label>
           </div>
         </div>
-        <button type="button">Calculate Repayments</button>
+        <button type="button"><span><img src="./assets/images/icon-calculator.svg" alt="calculator"></span>Calculate Repayments</button>
       </form>
     </section>
     <section class="results completedResults">
@@ -50,11 +59,6 @@
       </div>
     </section>
   </main>
-  
-  
-
-  
-
   <!-- Empty results start
 
   Results shown here

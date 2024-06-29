@@ -5,9 +5,150 @@ body{
     background: hsl(202, 86%, 94%);
     font-family: "Plus Jakarta Sans";
     color: hsl(202, 55%, 16%);
+    font-weight: 500;
+}
+main{
+    background-color: #fff;
+}
+section{
+    padding: 1rem;
+}
+.inputs{
+    
+}
+h1{
+    margin: 0;
+}
+.inputs > p{
+    margin: .5rem 0 1rem;
+    color: hsl(200, 24%, 40%);
+    text-decoration: underline;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+form> label, form> p{
+    margin-bottom: .5rem;
+    font-weight: 700;
+    color: hsl(200, 24%, 40%);
+}
+
+.numberInput, .Mortgage div label{
+    display: flex;
+    border-radius: 5px;
+    border: 2px solid hsl(200, 24%, 40%);
+    overflow: hidden;
+    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.numberInput, .Mortgage div label, button{
+    height: 3rem;
+}
+.numberInput{
+    margin-bottom: 1rem;
+    justify-content: space-between;
+}
+.numberInput:first-of-type{
+    flex-direction: row-reverse;
+}
+.numberInput input, .Mortgage div label{
+    width: 100%;
+    padding-left: 1rem;
+}
+.numberInput input, button{
+    border: none;
+}
+.numberInput input, .Mortgage div label, button{
+    color: hsl(202, 55%, 16%);
+    font-weight: 700;
+    font-size: 1.125em;
+    font-family: "Plus Jakarta Sans";
+}
+.numberInput input:focus{
+    outline: none;
+}
+.numberInput label{
+    width: max-content;
+    min-width: 48px;
+    padding: 0 1em;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    background-color: hsl(202, 86%, 94%);
+    color: hsl(200, 24%, 40%);
+    font-weight: 700;
+}
+.Mortgage{
+    margin-bottom: 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.Mortgage div input{
+    position: absolute;
+    width: 0;
+}
+.Mortgage div input:focus ~ label::before{
+    border: 2px solid hsl(61, 70%, 52%);
+}
+.Mortgage div input:focus ~ label::after{
+    left: 1.25rem;
+    width: 10px;
+    aspect-ratio: 1/1;
+    background-color: hsl(61, 70%, 52%);
+}
+.Mortgage div input:focus ~ label{
+    background-color: hsla(61, 70%, 52%, 0.125);
+    border: 2px solid hsl(61, 70%, 52%);
+}
+.Mortgage div label{
+    max-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding-left:3rem;
+}
+.Mortgage div label::before,.Mortgage div label::after, button{
+    border-radius: 100px;
+
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px;
+}
+.Mortgage div label::before, .Mortgage div label::after{
+    content: "";
+    width: 15px;
+    aspect-ratio: 1/1;
+    position: absolute;
+    left: 1rem;
+}
+.Mortgage div label::before{
+    display: block;
+    border: 2px solid hsl(200, 24%, 40%);
 }
 
 
+
+button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: none;
+    background-color: hsl(61, 70%, 52%);
+    
+}
+
+.results{
+    background-color: hsl(202, 55%, 16%);
+    color: white;
+}
 
 
 
