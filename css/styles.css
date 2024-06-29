@@ -13,9 +13,6 @@ main{
 section{
     padding: 1rem;
 }
-.inputs{
-    
-}
 h1{
     margin: 0;
 }
@@ -33,7 +30,9 @@ form> label, form> p{
     font-weight: 700;
     color: hsl(200, 24%, 40%);
 }
-
+.numberInput:nth-of-type(2) label{
+    padding-right: 1.5em;
+}
 .numberInput, .Mortgage div label{
     display: flex;
     border-radius: 5px;
@@ -142,32 +141,32 @@ button{
     gap: 10px;
     border: none;
     background-color: hsl(61, 70%, 52%);
-    
 }
 
 .results{
     background-color: hsl(202, 55%, 16%);
     color: white;
 }
+.results h2{
+    margin: 0 0 1em;
+}
+.results> p, h3{
+    color: rgba(255, 255, 255, 0.5);
+}
+.results> div{
+    padding: 1rem;
+    background-color: hsl(202, 55%, 10%);
+    box-shadow: 0 -3px hsl(61, 70%, 52%);
+    border-radius: 5px;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+h3{
+    font-size: .9em;
+}
 
 
 .attribution { font-size: 11px; text-align: center; }
