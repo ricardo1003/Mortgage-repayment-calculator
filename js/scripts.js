@@ -35,7 +35,7 @@ for(let i=0; i<3; i++){
 
 
 let numberSucess = false
-
+let typeSucess = false
 
 button.addEventListener("click",()=>{
     for(let i=0; i<3; i++){
@@ -45,6 +45,16 @@ button.addEventListener("click",()=>{
         }else{
             numberSucess = true
             console.log("bien")
+        }
+    }
+    for(let i=0; i<radioInputs.length; i++){
+        if (radioInputs[i].checked){
+            typeSucess = true
+            mortgageType = radioLabel[i].innerHTML
+            console.log("👽")
+        }else{
+            console.log("❗")
+            typeSucess = false
         }
     }
     
