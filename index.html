@@ -41,13 +41,13 @@
         </div>
         <p>Mortgage Type</p>
         <div class="Mortgage">
-          <div>
-            <input type="radio" name="MortgageType" id="Repayment">
-            <label for="Repayment">Repayment</label>
+          <div class="radioContainer">
+            <input type="radio" name="MortgageType" id="Repayment" class="radioButton">
+            <label for="Repayment"  class="radioLabel">Repayment</label>
           </div>
-          <div>
-            <input type="radio" name="MortgageType" id="InterestOnly">
-            <label for="InterestOnly">Interest Only</label>
+          <div class="radioContainer">
+            <input type="radio" name="MortgageType" id="InterestOnly" class="radioButton">
+            <label for="InterestOnly"  class="radioLabel">Interest Only</label>
           </div>
         </div>
         <button type="button"><span><img src="./assets/images/icon-calculator.svg" alt="calculator"></span>Calculate Repayments</button>
@@ -59,9 +59,9 @@
       <p>Your results are shown below based on the information you provided. To adjust the results, edit the form and click “calculate repayments” again.</p>
       <div>
         <h3>Your monthly repayments</h3>
-        <p>NaN</p>
+        <p id="monthlyRepayment">0</p>
         <h3>Total you'll repay over the term</h3>
-        <p>NaN</p>
+        <p id="totalRepayment">0</p>
       </div>
     </section>
   </main>

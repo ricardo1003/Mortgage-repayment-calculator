@@ -42,6 +42,9 @@ h1 span{
     text-decoration: underline;
     font-size: 1rem;
 }
+h1 span:hover, .Mortgage div label, button{
+    cursor:pointer;
+}
 form{
     display: flex;
     flex-direction: column;
@@ -130,16 +133,7 @@ form> .numberInput:first-of-type{
 .Mortgage div label:hover{
     border: 2px solid hsl(61, 70%, 52%);
 }
-.Mortgage div input:focus ~ label::before{
-    border: 2px solid hsl(61, 70%, 52%);
-}
-.Mortgage div input:focus ~ label::after{
-    left: 1.25rem;
-    width: 10px;
-    aspect-ratio: 1/1;
-    background-color: hsl(61, 70%, 52%);
-}
-.Mortgage div input:focus ~ label{
+.Mortgage input:checked ~ label{
     background-color: hsla(61, 70%, 52%, 0.125);
     border: 2px solid hsl(61, 70%, 52%);
 }
@@ -152,7 +146,7 @@ form> .numberInput:first-of-type{
 }
 .Mortgage div label::before,.Mortgage div label::after, button{
     border-radius: 100px;
-
+    
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
     -ms-border-radius: 100px;
@@ -168,6 +162,15 @@ form> .numberInput:first-of-type{
 .Mortgage div label::before{
     display: block;
     border: 2px solid hsl(200, 24%, 40%);
+}
+.Mortgage input:checked ~ label::before{
+    border: 2px solid hsl(61, 70%, 52%);
+}
+.Mortgage input:checked ~ label::after{
+    left: 1.25rem;
+    width: 10px;
+    aspect-ratio: 1/1;
+    background-color: hsl(61, 70%, 52%);
 }
 button{
     max-width: 20rem;
