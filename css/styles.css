@@ -62,13 +62,13 @@ form> label, form> p, .container> div > label{
 .container div{
     flex: 1 1 166px;
 }
-.container .numberInput{
+.container .numberInputContainer{
     margin: 0;
 }
 .container> :first-child div label{
     padding-right: 1.5em;
 }
-.numberInput, .Mortgage div label{
+.numberInputContainer, .Mortgage div label{
     display: flex;
     border-radius: 5px;
     border: 2px solid hsl(200, 24%, 40%);
@@ -79,36 +79,43 @@ form> label, form> p, .container> div > label{
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
 }
-.numberInput:hover{
-    border: 3px solid hsl(202, 55%, 10%)
+.numberInputContainer:hover{
+    border: 2px solid hsl(202, 55%, 10%);
+    outline: 1px solid hsl(202, 55%, 10%);
 }
-.numberInput, .Mortgage div label, button{
+.numberInputContainer.focused{
+    border: 2px solid hsl(61, 70%, 52%);
+}
+.numberInputContainer input:focus ~ label{
+    background-color: hsl(61, 70%, 52%);
+}
+.numberInputContainer, .Mortgage div label, button{
     height: 3rem;
 }
-.numberInput{
+.numberInputContainer{
     margin-bottom: 1rem;
     justify-content: space-between;
 }
-form> .numberInput:first-of-type{
+form> .numberInputContainer:first-of-type{
     flex-direction: row-reverse;
 }
-.numberInput input, .Mortgage div label{
+.numberInputContainer input, .Mortgage div label{
     width: 100%;
     padding-left: 1rem;
 }
-.numberInput input, button{
+.numberInputContainer input, button{
     border: none;
 }
-.numberInput input, .Mortgage div label, button{
+.numberInputContainer input, .Mortgage div label, button{
     color: hsl(202, 55%, 16%);
     font-weight: 700;
     font-size: 1.125em;
     font-family: "Plus Jakarta Sans";
 }
-.numberInput input:focus{
+.numberInputContainer input:focus{
     outline: none;
 }
-.numberInput label{
+.numberInputContainer label{
     width: max-content;
     min-width: 48px;
     padding: 0 1em;
@@ -130,9 +137,6 @@ form> .numberInput:first-of-type{
     position: absolute;
     width: 0;
 }
-.Mortgage div label:hover{
-    border: 2px solid hsl(61, 70%, 52%);
-}
 .Mortgage input:checked ~ label{
     background-color: hsla(61, 70%, 52%, 0.125);
     border: 2px solid hsl(61, 70%, 52%);
@@ -143,6 +147,9 @@ form> .numberInput:first-of-type{
     display: flex;
     align-items: center;
     padding-left:3rem;
+}
+.Mortgage div label:hover, .Mortgage div .radioFocused{
+    border: 2px solid hsl(61, 70%, 52%);
 }
 .Mortgage div label::before,.Mortgage div label::after, button{
     border-radius: 100px;

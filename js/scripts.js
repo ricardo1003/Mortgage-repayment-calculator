@@ -5,6 +5,9 @@ const totalResults = document.getElementById("totalRepayment")
 const radioButtons = [...document.getElementsByClassName("radioContainer")]
 const radioInputs = [...document.getElementsByClassName("radioButton")]
 const radioLabel = [...document.getElementsByClassName("radioLabel")]
+const radioContainers = document.getElementsByClassName("Mortgage")[0] 
+const numberInputContainer = [...document.getElementsByClassName("numberInputContainer")]
+const numberInput = [...document.getElementsByClassName("numberInput")]
 
 const results = document.getElementsByClassName("results")[0]
 const sucessState = [...document.getElementsByClassName("uncompletedResults")]
@@ -36,6 +39,23 @@ for(let i=0; i<3; i++){
     })
 }
 
+for (let i=0; i<numberInputContainer.length; i++){
+    numberInput[i].addEventListener("focus", ()=>{
+        numberInputContainer[i].classList.add("focused")
+    })
+    numberInput[i].addEventListener("blur", ()=>{
+        numberInputContainer[i].classList.remove("focused")
+    })
+}
+
+for (let i=0; i<radioInputs.length; i++){
+    radioInputs[i].addEventListener("focus", ()=>{
+        radioLabel[i].classList.add("radioFocused")
+    })
+    radioInputs[i].addEventListener("blur", ()=>{
+        radioLabel[i].classList.remove("radioFocused")
+    })
+}
 
 let mortgageType = "none"
 let numberSucess = false
@@ -44,11 +64,9 @@ let typeSucess = false
 button.addEventListener("click",()=>{
     for(let i=0; i<3; i++){
         if(form[i].value.trim() === ""){
-            console.log("hey >:(")
             numberSucess = false
         }else{
             numberSucess = true
-            console.log("bien")
         }
     }
     for(let i=0; i<radioInputs.length; i++){
@@ -60,7 +78,6 @@ button.addEventListener("click",()=>{
     switch(mortgageType){
         case "Repayment":
             resultsMonthly.innerHTML = `€${calculateRepayment(amount, term, interest).toFixed(2)}`
-            console.log("Hola")
             totalResults.innerHTML = `€${totalMortgage(term).toFixed(2)}`
         break
         case "Interest Only":
