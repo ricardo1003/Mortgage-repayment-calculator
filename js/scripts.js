@@ -31,3 +31,21 @@ for(let i=0; i<3; i++){
         interest = form[2].value
     })
 }
+
+
+
+let numberSucess = false
+
+
+button.addEventListener("click",()=>{
+    for(let i=0; i<3; i++){
+        if(form[i].value.trim() === ""){
+            console.log("hey >:(")
+            numberSucess = false
+        }else{
+            numberSucess = true
+            console.log("bien")
+        }
+    }
+    
+})
