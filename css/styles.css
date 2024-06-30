@@ -1,6 +1,10 @@
 body{
     min-height: 100vh;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     box-sizing: border-box;
     background: hsl(202, 86%, 94%);
     font-family: "Plus Jakarta Sans";
@@ -8,29 +12,56 @@ body{
     font-weight: 500;
 }
 main{
+    max-width: 1024px;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 10px 75px hsla(200, 24%, 40%, 0.5);
     background-color: #fff;
+
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
 }
 section{
-    padding: 1rem;
+    padding: 2rem;
+    flex: 1 1 320.8px;
 }
 h1{
     margin: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
-.inputs > p{
+h1 span{
     margin: .5rem 0 1rem;
     color: hsl(200, 24%, 40%);
     text-decoration: underline;
+    font-size: 1rem;
 }
 form{
     display: flex;
     flex-direction: column;
 }
-form> label, form> p{
+form> label, form> p, .container> div > label{
     margin-bottom: .5rem;
     font-weight: 700;
     color: hsl(200, 24%, 40%);
 }
-.numberInput:nth-of-type(2) label{
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.container div{
+    flex: 1 1 166px;
+}
+.container .numberInput{
+    margin: 0;
+}
+.container> :first-child div label{
     padding-right: 1.5em;
 }
 .numberInput, .Mortgage div label{
@@ -51,7 +82,7 @@ form> label, form> p{
     margin-bottom: 1rem;
     justify-content: space-between;
 }
-.numberInput:first-of-type{
+form> .numberInput:first-of-type{
     flex-direction: row-reverse;
 }
 .numberInput input, .Mortgage div label{
@@ -135,6 +166,8 @@ form> label, form> p{
 
 
 button{
+    max-width: 20rem;
+    box-sizing: content-box;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -144,11 +177,21 @@ button{
 }
 
 .results{
+    display: flex;
+    flex-direction: column;
+    border-radius: 0 0 0 75px;
     background-color: hsl(202, 55%, 16%);
     color: white;
+    -webkit-border-radius: 0 0 0 75px;
+    -moz-border-radius: 0 0 0 75px;
+    -ms-border-radius: 0 0 0 75px;
+    -o-border-radius: 0 0 0 75px;
+}
+.completedResults img{
+    display: none;
 }
 .results h2{
-    margin: 0 0 1em;
+    margin: 0
 }
 .results> p, h3{
     color: rgba(255, 255, 255, 0.5);
@@ -167,7 +210,35 @@ button{
 h3{
     font-size: .9em;
 }
-
-
+.results> div p{
+    margin: 0;
+}
+.results> div p:first-of-type{
+    border-bottom: 1px solid hsla(200, 24%, 40%, 0.5);
+    color: hsl(61, 70%, 52%);
+    font-size: 2em;
+    padding-bottom: 1rem;
+}
+.results> div p:last-of-type{
+    font-size: 1.25em;
+}
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
+
+@media only screen and (max-width:768px){
+    main, .results{
+        border-radius: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+}
+    .container div{
+        flex: 1 1 359px;
+    }
+    button{
+        max-width: none;
+        width: 100%;
+        align-self: center;
+    }
+}

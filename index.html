@@ -16,23 +16,28 @@
 <body>
   <main>
     <section class="inputs">
-      <h1>Mortgage Calculator</h1>
-      <p>Clear All</p>
+      <h1>Mortgage Calculator <span>Clear All</span></h1>
       <form>
         <label for="amount">Mortgage Amount</label>
         <div class="numberInput">
           <input type="number" id="amount">
           <label for="amount">&euro;</label>
         </div>
-        <label for="term">Mortgage Term</label>
-        <div class="numberInput">
-          <input type="number" id="term">
-          <label for="term">years</label>
-        </div>
-        <label for="interest">Interest Rate</label>
-        <div class="numberInput">
-          <input type="number" id="interest">
-          <label for="interest">&percnt;</label>
+        <div class="container">
+          <div>
+            <label for="term">Mortgage Term</label>
+            <div class="numberInput">
+              <input type="number" id="term">
+              <label for="term">years</label>
+            </div>
+          </div>
+          <div>
+            <label for="interest">Interest Rate</label>
+            <div class="numberInput">
+              <input type="number" id="interest">
+              <label for="interest">&percnt;</label>
+            </div>
+          </div>
         </div>
         <p>Mortgage Type</p>
         <div class="Mortgage">
@@ -49,13 +54,14 @@
       </form>
     </section>
     <section class="results completedResults">
+      <img src="./assets/images/illustration-empty.svg" alt="results">
       <h2>Your results</h2>
       <p>Your results are shown below based on the information you provided. To adjust the results, edit the form and click “calculate repayments” again.</p>
       <div>
         <h3>Your monthly repayments</h3>
-        <p></p>
+        <p>NaN</p>
         <h3>Total you'll repay over the term</h3>
-        <p></p>
+        <p>NaN</p>
       </div>
     </section>
   </main>
