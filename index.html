@@ -53,11 +53,13 @@
         <button type="button"><span><img src="./assets/images/icon-calculator.svg" alt="calculator"></span>Calculate Repayments</button>
       </form>
     </section>
-    <section class="results completedResults">
-      <img src="./assets/images/illustration-empty.svg" alt="results">
-      <h2>Your results</h2>
-      <p>Your results are shown below based on the information you provided. To adjust the results, edit the form and click “calculate repayments” again.</p>
-      <div>
+    <section class="results uncompleteSection">
+      <img src="./assets/images/illustration-empty.svg" alt="results" class="uncompleteState">
+      <h2 class="submittedState">Your results</h2>
+      <h2 class="uncompleteState">Results shown here</h2>
+      <p class="submittedState">Your results are shown below based on the information you provided. To adjust the results, edit the form and click “calculate repayments” again.</p>
+      <p class="uncompleteState">Complete the form and click “calculate repayments” to see what your monthly repayments would be.</p>
+      <div class="submittedState">
         <h3>Your monthly repayments</h3>
         <p id="monthlyRepayment">0</p>
         <h3>Total you'll repay over the term</h3>
@@ -65,16 +67,6 @@
       </div>
     </section>
   </main>
-  <!-- Empty results start
-
-  Results shown here
-
-  Complete the form and click “calculate repayments” to see what 
-  your monthly repayments would be.
-
-Empty results end -->
-
-  
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
     Coded by <a href="https://www.github.com/ricardo1003">ricardo1003</a>.

@@ -6,6 +6,10 @@ const radioButtons = [...document.getElementsByClassName("radioContainer")]
 const radioInputs = [...document.getElementsByClassName("radioButton")]
 const radioLabel = [...document.getElementsByClassName("radioLabel")]
 
+const results = document.getElementsByClassName("results")[0]
+const sucessState = [...document.getElementsByClassName("uncompletedResults")]
+const failState = [...document.getElementsByClassName("uncomplete")]
+
 let amount = form[0].value
 let term = form[1].value
 let interest = form[2].value
@@ -51,10 +55,6 @@ button.addEventListener("click",()=>{
         if (radioInputs[i].checked){
             typeSucess = true
             mortgageType = radioLabel[i].innerHTML
-            console.log("👽")
-        }else{
-            console.log("❗")
-            typeSucess = false
         }
     }
     switch(mortgageType){
@@ -69,5 +69,11 @@ button.addEventListener("click",()=>{
         break
         default:
             console.log("oye >:(")
+    }
+    if (mortgageType !== "none" && numberSucess && typeSucess){
+        if(results.classList.contains("uncompleteSection")){
+            results.classList.remove("uncompleteSection")
+            results.classList.add("completeSection")
+        }
     }
 })
