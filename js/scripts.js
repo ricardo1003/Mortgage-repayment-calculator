@@ -33,7 +33,7 @@ for(let i=0; i<3; i++){
 }
 
 
-
+let mortgageType = "none"
 let numberSucess = false
 let typeSucess = false
 
@@ -57,5 +57,17 @@ button.addEventListener("click",()=>{
             typeSucess = false
         }
     }
-    
+    switch(mortgageType){
+        case "Repayment":
+            resultsMonthly.innerHTML = `€${calculateRepayment(amount, term, interest).toFixed(2)}`
+            console.log("Hola")
+            totalResults.innerHTML = `€${totalMortgage(term).toFixed(2)}`
+        break
+        case "Interest Only":
+            resultsMonthly.innerHTM = calculateInterest(amount, interest)
+            totalResults.innerHTML = totalInterest(term)
+        break
+        default:
+            console.log("oye >:(")
+    }
 })
