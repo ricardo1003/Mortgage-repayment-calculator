@@ -64,8 +64,8 @@ button.addEventListener("click",()=>{
             totalResults.innerHTML = `€${totalMortgage(term).toFixed(2)}`
         break
         case "Interest Only":
-            resultsMonthly.innerHTM = calculateInterest(amount, interest)
-            totalResults.innerHTML = totalInterest(term)
+            resultsMonthly.innerHTML = `€${calculateInterest(amount, interest)}`
+            totalResults.innerHTML = `€${totalInterest(term)}`
         break
         default:
             console.log("oye >:(")
