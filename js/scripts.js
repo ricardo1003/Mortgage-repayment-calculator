@@ -21,6 +21,8 @@ const textRequired = [...document.getElementsByClassName("textRequired")]
 const containerRequiredState = document.getElementsByClassName("container")[0]
 const InputRequiredState = [...document.getElementsByClassName("numberInputContainer")]
 
+const clearAll = document.getElementById("clear")
+
 
 let amount = form[0].value
 let term = form[1].value
@@ -114,4 +116,13 @@ button.addEventListener("click",()=>{
             results.classList.add("completeSection")
         }
     }
+})
+
+clearAll.addEventListener("click",()=>{
+    form.reset()
+    mortgageType = "none"
+    numberSucess = false
+    typeSucess = false
+    results.classList.add("uncompleteSection")
+    results.classList.remove("completeSection")
 })
