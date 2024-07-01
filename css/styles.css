@@ -63,7 +63,7 @@ form> label, form> p, .container> div > label{
     flex: 1 1 166px;
 }
 .container .numberInputContainer{
-    margin: 0;
+    margin: .5rem 0 0;
 }
 .container> :first-child div label{
     padding-right: 1.5em;
@@ -250,6 +250,32 @@ h3{
 .completeSection> div p:last-of-type{
     font-size: 1.25em;
 }
+
+.containerRequired{
+    gap: 0;
+}
+.numberInputContainer.required{
+    border: 2px solid hsl(4, 69%, 50%);
+}
+.numberInputContainer.required label, .numberInputContainer.required label:focus{
+    background-color: hsl(4, 69%, 50%);
+    color: white;
+}
+.numberInputContainer.required{
+    margin-bottom: 0;
+}
+.textRequired:first-of-type{
+    margin-bottom: .5rem;
+}
+.textRequired{
+    margin: 0;
+    color: hsl(4, 69%, 50%);
+    font-weight: 500;
+}
+.filled{
+    display: none;
+}
+
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
 

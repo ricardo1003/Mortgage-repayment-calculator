@@ -1,17 +1,26 @@
 const form = document.getElementsByTagName("form")[0]
-const button = document.getElementsByTagName("button")[0]
+
 const resultsMonthly = document.getElementById("monthlyRepayment")
 const totalResults = document.getElementById("totalRepayment")
+
+const numberInputContainer = [...document.getElementsByClassName("numberInputContainer")]
+const numberInput = [...document.getElementsByClassName("numberInput")]
+
 const radioButtons = [...document.getElementsByClassName("radioContainer")]
 const radioInputs = [...document.getElementsByClassName("radioButton")]
 const radioLabel = [...document.getElementsByClassName("radioLabel")]
 const radioContainers = document.getElementsByClassName("Mortgage")[0] 
-const numberInputContainer = [...document.getElementsByClassName("numberInputContainer")]
-const numberInput = [...document.getElementsByClassName("numberInput")]
+
+const button = document.getElementsByTagName("button")[0]
 
 const results = document.getElementsByClassName("results")[0]
 const sucessState = [...document.getElementsByClassName("uncompletedResults")]
 const failState = [...document.getElementsByClassName("uncomplete")]
+
+const textRequired = [...document.getElementsByClassName("textRequired")]
+const containerRequiredState = document.getElementsByClassName("container")[0]
+const InputRequiredState = [...document.getElementsByClassName("numberInputContainer")]
+
 
 let amount = form[0].value
 let term = form[1].value
@@ -65,15 +74,27 @@ button.addEventListener("click",()=>{
     for(let i=0; i<3; i++){
         if(form[i].value.trim() === ""){
             numberSucess = false
+            containerRequiredState.classList.add("containerRequired")
+            textRequired[i].classList.remove("filled")
+            InputRequiredState[i].classList.add("required")
         }else{
             numberSucess = true
+            containerRequiredState.classList.remove("containerRequired")
+            textRequired[i].classList.add("filled")
+            InputRequiredState[i].classList.remove("required")
         }
     }
     for(let i=0; i<radioInputs.length; i++){
         if (radioInputs[i].checked){
             typeSucess = true
             mortgageType = radioLabel[i].innerHTML
+        }else{
         }
+    }
+    if (typeSucess){
+        textRequired[3].classList.add("filled")
+    }else{
+        textRequired[3].classList.remove("filled")
     }
     switch(mortgageType){
         case "Repayment":
